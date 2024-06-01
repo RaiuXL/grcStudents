@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-/*// 1. define the query
+// 1. define the query
 $sql = "SELECT * FROM student ORDER BY `last`";
 // 2. prepare the statement
 $statement = $dbh->prepare($sql);
@@ -59,11 +59,12 @@ $statement->execute();
 // 4. process the result
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 $count = 1;
+echo '<h2>Student List</h2>';
 foreach ($result as $row) {
     echo "<p>".$count++.". ".$row['last'].", ".$row['first']."</p>";
 }
 
-// INSERT INTO query
+/*// INSERT INTO query
 //PDO 1. define query
 $sql = 'INSERT INTO student (sid,last,first,birthdate,gpa,advisor)
         VALUES (:sid, :last, :first, :birthdate, :gpa, :advisor)';
